@@ -9,6 +9,7 @@ public class ActorList {
 	
 	public ActorList(){
 		actors = new ArrayList<String>();
+		current = new ArrayList<String>();
 		File f = new File("actors.txt");
 		
 		try {
@@ -21,22 +22,23 @@ public class ActorList {
 			e.printStackTrace();
 		}
 		
-		current = actors;
+		//current = actors;
 	}
 	
 	public void found(String actor) {
-		int idx = current.indexOf(actor);
+		/*int idx = current.indexOf(actor);
 		if(idx > -1) {
 			actors.remove(idx);
-		}
+		}*/
+		current.add(actor);
 	}
 	
 	public void reset(){
-		current = actors;
+		current.clear();
 	}
 	
 	public ArrayList<String> getActors(){
-		return current;
+		return actors;
 	}
 		
 	

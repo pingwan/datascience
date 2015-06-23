@@ -58,12 +58,12 @@ public class Bigram implements WritableComparable {
 		}
 	}
 	public int hashCode() {
-		return Integer.parseInt(this.actorA.hashCode()+""+this.actorA.hashCode());
+		return (this.actorA.hashCode() / this.actorA.hashCode());
 	}
 	
 	@Override
 	public String toString(){
-		return "key is " + this.actorA.toString() +" "+ this.actorB.toString();
+		return this.actorA.toString() +" "+ this.actorB.toString();
 	}
     
     

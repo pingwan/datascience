@@ -34,19 +34,22 @@ public class Actors {
           	}
    		   	
           	for(String actor : actors.getActors()){
-          		if(line.contains(actor)){
+          		if(line.contains(actor) && !actors.current.contains(actor)){
           			actors.found(actor);
-          			context.write(new Text(actor),new Text(url));
+          			context.write(new Text(url),new Text(actor));
           		}
           	}
           	if(line.toLowerCase().equals("warc/1.0")){
           		actors.reset();
           	}       
             
+          	
+          	//java.util.ConcurrentModificationException
+          	
     }
  } 
  
- public static class Reduce extends Reducer<Text, Text, Bigram, IntWritable> {
+ public static class Reduce extends Reducer<Text, Text, Text, IntWritable> {
 
     public IntWritable one = new IntWritable(1);
     
@@ -63,7 +66,7 @@ public class Actors {
     		for(int j = i+1; j < cache.size(); j++){
     			Bigram temp = new Bigram();
     			temp.set(cache.get(i), cache.get(j));
-    			context.write(temp, one);
+    			context.write(new Text(temp.toString()), one);
     		}
     	}
         
@@ -73,14 +76,9 @@ public class Actors {
  
  public static class IdMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 	 public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-		 IntWritable res = new IntWritable();
-		 //res.set(Integer.parseInt(value.toString()));
 		 
-		 
-		 String temp = value.toString();
-		 int x = Character.getNumericValue(temp.charAt(temp.length()-1));
-		 res.set(x);
-		 context.write(new Text("Totaal"), res);
+		 String line = value.toString();
+		 context.write(new Text(line.split("\\s+")[0] + " " + line.split("\\s+")[1]),new IntWritable(1));
 	 }
  }
  
@@ -90,10 +88,8 @@ public class Actors {
 		 int total = 0;
 		 for(IntWritable value : values) {
 			 total += value.get();
-			 //context.write(new Text("Total"), new IntWritable(total));
 		 }
-		 
-		 context.write(new Text("Total"), new IntWritable(total/6));
+		 context.write(key, new IntWritable(total));
 	 }
  }
         
@@ -107,7 +103,7 @@ public class Actors {
     Job job = Job.getInstance(conf);
     job.setJobName("Counting");
 
-    job.setMapOutputKeyClass(IntWritable.class);
+    job.setMapOutputKeyClass(Text.class);
     job.setMapOutputValueClass(Text.class);
         
     job.setOutputKeyClass(Text.class);
