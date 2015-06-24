@@ -18,8 +18,6 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 public class Actors {
         
  public static class Map extends Mapper<LongWritable, Text, Text, Text> {
-	 
-	 
 	public  ActorList actors = new ActorList();
 	public  int actorSize = 0;
 	

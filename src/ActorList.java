@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class ActorList {
-
 	public ArrayList<String> actors;
 	public ArrayList<String> current;
 	
@@ -21,15 +20,9 @@ public class ActorList {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//current = actors;
 	}
 	
 	public void found(String actor) {
-		/*int idx = current.indexOf(actor);
-		if(idx > -1) {
-			actors.remove(idx);
-		}*/
 		current.add(actor);
 	}
 	
@@ -40,6 +33,4 @@ public class ActorList {
 	public ArrayList<String> getActors(){
 		return actors;
 	}
-		
-	
 }
