@@ -3,43 +3,34 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class ActorList {
-
-	public ArrayList<String> actors;
-	public ArrayList<String> current;
+	public ArrayList<Actor> actors;
+	public ArrayList<Actor> current;
 	
 	public ActorList(){
-		actors = new ArrayList<String>();
-		current = new ArrayList<String>();
+		actors = new ArrayList<Actor>();
+		current = new ArrayList<Actor>();
 		File f = new File("actors.txt");
 		
 		try {
 			Scanner sc = new Scanner(f);
 			while(sc.hasNext()) {
-				actors.add(sc.next());
+				actors.add(new Actor(sc.nextInt(), sc.next()));
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//current = actors;
 	}
 	
-	public void found(String actor) {
-		/*int idx = current.indexOf(actor);
-		if(idx > -1) {
-			actors.remove(idx);
-		}*/
-		current.add(actor);
+	public void found(int index) {
+		current.remove(index);
 	}
 	
 	public void reset(){
-		current.clear();
+		current = actors;
 	}
 	
-	public ArrayList<String> getActors(){
-		return actors;
+	public ArrayList<Actor> getCurrent(){
+		return current;
 	}
-		
-	
 }
