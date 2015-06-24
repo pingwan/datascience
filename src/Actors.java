@@ -44,10 +44,10 @@ public class Actors {
 		public IntWritable one = new IntWritable(1);
 
 		public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-			ArrayList<IntWritable> cache = new ArrayList<IntWritable>();
+			ArrayList<Integer> cache = new ArrayList<Integer>();
 
 			for(IntWritable val:values) {
-				cache.add(new IntWritable(val.get()));
+				cache.add(val.get());
 			}
 
 			for(int i = 0; i < cache.size(); i++){
@@ -73,9 +73,7 @@ public class Actors {
 		public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
 			int total = 0;
 			for(IntWritable value : values) {
-//				total += value.get();
-				//i think value is always 1?
-				total += 1;
+				total += value.get();
 			}
 			context.write(key, new IntWritable(total));
 		}
@@ -91,7 +89,7 @@ public class Actors {
 		job.setJobName("Counting");
 
 		job.setMapOutputKeyClass(Text.class);
-		job.setMapOutputValueClass(Text.class);
+		job.setMapOutputValueClass(IntWritable.class);
 
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(IntWritable.class);

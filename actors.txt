@@ -1,50 +1,50 @@
-Christopher Lee
-Bryce Dallas Howard
-Alexandra Daddario
-Emilia Clarke
-Chris Pratt
-Tom Hardy
-Margot Robbie
-Jamie Clayton
-Kate Upton
-Hailee Steinfeld
-Alicia Vikander
-Diana Prince
-Tuppence Middleton
-Mae Whitman	
-Rose Byrne
-Johnny Depp
-Elizabeth Hurley	
-Scarlett Johansson
-Britt Robertson
-Natalie Dormer
-Ariana Richards
-Joseph Mazzello
-Melissa McCarthy
-Jennifer Lawrence
-Sophie Turner	 
-Natalie Portman	 
-Anna Kendrick	 
-Chloë Grace Moretz	  
-Charlize Theron	 
-Lena Headey	 
-Kit Harington	 
-Rachel McAdams	 
-Peter Dinklage	 
-Carla Gugino	 
-Emily Ratajkowski	 
-Cara Delevingne	 
-Emma Stone	 
-Taryn Manning	 
-Kate Mara	 
-Emma Watson	 
-Dwayne Johnson	 
-Taylor Schilling	 
-Claire Holt	 
-Jessica Chastain	 
-Shailene Woodley	 
-Tim Curry	 
-Dakota Johnson	 
-Bella Thorne	 
-Mary Ellen Trainor	  
-Sam Heughan	 
+1 Christopher Lee
+2 Bryce Dallas Howard
+3 Alexandra Daddario
+4 Emilia Clarke
+5 Chris Pratt
+6 Tom Hardy
+7 Margot Robbie
+8 Jamie Clayton
+9 Kate Upton
+10 Hailee Steinfeld
+11 Alicia Vikander
+12 Diana Prince
+13 Tuppence Middleton
+14 Mae Whitman	
+15 Rose Byrne
+16 Johnny Depp
+17 Elizabeth Hurley	
+18 Scarlett Johansson
+19 Britt Robertson
+20 Natalie Dormer
+21 Ariana Richards
+22 Joseph Mazzello
+23 Melissa McCarthy
+24 Jennifer Lawrence
+25 Sophie Turner	 
+26 Natalie Portman	 
+27 Anna Kendrick	 
+28 Chloë Grace Moretz	  
+29 Charlize Theron	 
+30 Lena Headey	 
+31 Kit Harington	 
+32 Rachel McAdams	 
+33 Peter Dinklage	 
+34 Carla Gugino	 
+35 Emily Ratajkowski	 
+36 Cara Delevingne	 
+37 Emma Stone	 
+38 Taryn Manning	 
+39 Kate Mara	 
+40 Emma Watson	 
+41 Dwayne Johnson	 
+42 Taylor Schilling	 
+43 Claire Holt	 
+44 Jessica Chastain	 
+45 Shailene Woodley	 
+46 Tim Curry	 
+47 Dakota Johnson	 
+48 Bella Thorne	 
+49 Mary Ellen Trainor	  
+50 Sam Heughan	 

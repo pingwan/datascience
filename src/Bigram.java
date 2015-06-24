@@ -7,66 +7,33 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 
-public class Bigram implements WritableComparable {    
-	private IntWritable actorA;
-	private IntWritable actorB;
+public class Bigram {    
+	private int actorA;
+	private int actorB;
 
-	public Bigram(IntWritable a, IntWritable b) {
-		this.actorA = a;
-		this.actorB = b;
+	public Bigram(int a, int b) {
+		if(a<=b) {
+			this.actorA = a;
+			this.actorB = b;
+		} else {
+			this.actorA = b;
+			this.actorB = a;
+		}
 	}
 	
 	public Bigram() {
-		this.actorA = new IntWritable();
-		this.actorB = new IntWritable();
+		super();
 	}
 	
-	public void write(DataOutput out) throws IOException {
-		actorA.write(out);
-		actorB.write(out);
+	public int getA() {
+		return this.actorA;
 	}
 
-	public void readFields(DataInput in) throws IOException {
-		actorA.readFields(in);
-		actorB.readFields(in);
+	public int getB() {
+		return this.actorB;
 	}
-
-	public String getA() {
-		return this.actorA.toString();
-	}
-
-	public String getB() {
-		return this.actorB.toString();
-	}
-
-	public static Bigram read(DataInput in) throws IOException {
-		Bigram w = new Bigram();
-		w.readFields(in);
-		return w;
-	}
-	
-	public int compareTo(Object o) {
-		if(o instanceof Bigram){
-			Bigram temp = (Bigram) o;
-			
-			if(this.actorA.equals(temp.actorB) && this.actorB.equals(temp.actorB)){
-				return 1;
-			} 
-			else{
-				return 0;
-			}
-		}
-		else{
-			return 0;
-		}
-	}
-	
-	public int hashCode() {
-		return (this.actorA.hashCode() / this.actorA.hashCode());
-	}
-
 	@Override
 	public String toString(){
-		return this.actorA.toString() + " " + this.actorB.toString();
+		return this.actorA + " " + this.actorB;
 	}
 }
