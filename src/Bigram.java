@@ -8,9 +8,19 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 
 public class Bigram implements WritableComparable {    
-	private Text actorA;
-	private Text actorB;
+	private IntWritable actorA;
+	private IntWritable actorB;
 
+	public Bigram(IntWritable a, IntWritable b) {
+		this.actorA = a;
+		this.actorB = b;
+	}
+	
+	public Bigram() {
+		this.actorA = new IntWritable();
+		this.actorB = new IntWritable();
+	}
+	
 	public void write(DataOutput out) throws IOException {
 		actorA.write(out);
 		actorB.write(out);
@@ -19,11 +29,6 @@ public class Bigram implements WritableComparable {
 	public void readFields(DataInput in) throws IOException {
 		actorA.readFields(in);
 		actorB.readFields(in);
-	}
-
-	public void set(String a, String b) {
-		this.actorA =  new Text(a);
-		this.actorB = new Text(b);
 	}
 
 	public String getA() {
@@ -38,11 +43,6 @@ public class Bigram implements WritableComparable {
 		Bigram w = new Bigram();
 		w.readFields(in);
 		return w;
-	}
-
-	public Bigram(){
-		this.actorA = new Text();
-		this.actorB = new Text();
 	}
 	
 	public int compareTo(Object o) {
@@ -67,6 +67,6 @@ public class Bigram implements WritableComparable {
 
 	@Override
 	public String toString(){
-		return this.actorA.toString() +" "+ this.actorB.toString();
+		return this.actorA.toString() + " " + this.actorB.toString();
 	}
 }
