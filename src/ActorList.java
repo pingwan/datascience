@@ -16,10 +16,9 @@ public class ActorList {
 	public ActorList(){
 		actors = new ArrayList<Actor>();
 		current = new ArrayList<Actor>();
-		
 
 		try {
-			Path pt = new Path("hdfs://localhost:9000/actors.txt");
+			Path pt = new Path("hdfs://hathi-surfsara/user/TUD-DS03/actors.txt");
 			FileSystem fs = FileSystem.get(new Configuration());
 		
 			BufferedReader br = new BufferedReader(new InputStreamReader(fs.open(pt)));

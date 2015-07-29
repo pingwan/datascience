@@ -2,6 +2,7 @@
 import java.io.IOException;
 import java.util.*;
 
+import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.conf.*;
@@ -14,12 +15,18 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Actors {
 	public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
+				
 		public ActorList actors = new ActorList();
 		public int actorSize = 0;
 
 		public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 			String line = value.toString();
 			String url = "";
+			
+			
+			System.out.println();
+			System.out.println("ACTOR SIZE IS ->" + actors.actors.size());
+			System.out.println();
 
 			if(line.toLowerCase().startsWith("warc-target-uri:")) {
 				url = line.split(" ")[1];
@@ -80,8 +87,15 @@ public class Actors {
 	}
 
 	public static void main(String[] args) throws Exception {
+		
+		
 		Configuration conf = new Configuration();
-
+		
+		System.out.println("printing!!!!");
+		ActorList lst = new ActorList();
+		
+		System.out.println("ACTORLIST -> " + lst.actors.size());
+		
 		FileSystem fs = FileSystem.get(conf);
 		fs.delete(new Path("temp1"), true);
 
@@ -97,16 +111,23 @@ public class Actors {
 		job.setMapperClass(Map.class);
 		job.setReducerClass(Reduce.class);
 
-		//job.setJarByClass(Reduce.class);
+		job.setJarByClass(Reduce.class);
 
 		job.setInputFormatClass(TextInputFormat.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
 
-		FileInputFormat.addInputPath(job, new Path(args[0]));
+		FileStatus[] status = fs.listStatus(new Path("hdfs://hathi-surfsara/user/TUD-DS03/" + args[0]));
+		for(int i=0; i<status.length; i++){
+			FileStatus temp = status[i];
+			System.out.println("1 van de path is: " +temp.getPath());
+			FileInputFormat.addInputPath(job, temp.getPath());
+		}
 		FileOutputFormat.setOutputPath(job, new Path("temp1"));
+		
 
+		Configuration conf2 = new Configuration();
 
-		Job agg = Job.getInstance(conf);
+		Job agg = Job.getInstance(conf2);
 		agg.setJobName("Aggregate");
 
 		agg.setMapOutputKeyClass(Text.class);
@@ -117,6 +138,8 @@ public class Actors {
 
 		agg.setMapperClass(IdMapper.class);
 		agg.setReducerClass(AggregateReducer.class);
+		
+		agg.setJarByClass(AggregateReducer.class);
 
 		agg.setInputFormatClass(TextInputFormat.class);
 		agg.setOutputFormatClass(TextOutputFormat.class);
