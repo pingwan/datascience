@@ -98,7 +98,7 @@ public class Actors {
 		job.setInputFormatClass(TextInputFormat.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
 
-		FileStatus[] status = fs.listStatus(new Path("hdfs://hathi-surfsara/user/TUD-DS03/" + args[0]));
+		FileStatus[] status = fs.listStatus(new Path("hdfs://hathi-surfsara/" + args[0]));
 		for(int i=0; i<status.length; i++){
 			FileStatus temp = status[i];
 			//System.out.println("1 van de path is: " +temp.getPath());
