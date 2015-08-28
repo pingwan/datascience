@@ -1,1 +1,17 @@
-[0m[[0mdebug[0m] [0mJar uptodate: /home/chris/ds/datascience/CCStat/target/scala-2.10/ccstat_2.10-1.0.jar[0m
+[0m[[0minfo[0m] [0mPackaging /home/chris/ds/datascience/CCStat/target/scala-2.10/ccstat_2.10-1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	CCStat$$anonfun$4.class[0m
+[0m[[0mdebug[0m] [0m	  /home/chris/ds/datascience/CCStat/target/scala-2.10/classes/CCStat$$anonfun$4.class[0m
+[0m[[0mdebug[0m] [0m	CCStat.class[0m
+[0m[[0mdebug[0m] [0m	  /home/chris/ds/datascience/CCStat/target/scala-2.10/classes/CCStat.class[0m
+[0m[[0mdebug[0m] [0m	CCStat$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/chris/ds/datascience/CCStat/target/scala-2.10/classes/CCStat$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	CCStat$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/chris/ds/datascience/CCStat/target/scala-2.10/classes/CCStat$.class[0m
+[0m[[0mdebug[0m] [0m	CCStat$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  /home/chris/ds/datascience/CCStat/target/scala-2.10/classes/CCStat$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	CCStat$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	  /home/chris/ds/datascience/CCStat/target/scala-2.10/classes/CCStat$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	CCStat$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/chris/ds/datascience/CCStat/target/scala-2.10/classes/CCStat$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

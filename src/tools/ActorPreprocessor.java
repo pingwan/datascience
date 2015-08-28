@@ -7,9 +7,6 @@ import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
-
 
 public class ActorPreprocessor {
 	
@@ -53,9 +50,13 @@ public class ActorPreprocessor {
 						
 				}
 			}
-		} catch(Exception ex) {
+			
+			br.close();
+		} 
+		catch(Exception ex) {
 			ex.printStackTrace();
 		}
+		
 		return result;
 	}
 
