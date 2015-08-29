@@ -38,3 +38,7 @@ Recommending
 
 Discussion
 --------------------------
+The goal of the project was to get hands-on experience with hadoop.
+In our opinion this is accomplished.
+Coding the hadoop jobs with the MapReduce paradigm went well. 
+Where we struggled with was the connection to the hadoop clusters and accessing the  appropiate Common Crawl dataset. 
