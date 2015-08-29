@@ -26,6 +26,12 @@ In the reducer, the number of occurences of a bigram is counted and written to d
 
 Clustering
 --------------------------
+The goal of the clustering phase is to find groups of related actors.
+The input comes from the hadoop jobs which are bigrams which represents two actors together with the number of occurences they were mentioned.
+From all the avaiable clustering algorithms, the k-means was chosen due to the simplicity and speed.
+The rule of thumb was used in order to determine the appropiate number for k. 
+The formulate is  sqrt(n/2), where n is the amount of bigrams.
+The output of the clustering phase are groups of actors.
 
 Recommending
 --------------------------
