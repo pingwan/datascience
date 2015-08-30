@@ -29,7 +29,7 @@ In the reducer, the number of occurences of a bigram is counted and written to d
 Clustering
 --------------------------
 The goal of the clustering phase is to find groups of related actors.
-The input comes from the hadoop jobs which are bigrams which represents two actors together with the number of occurences they were mentioned.
+The input comes from the hadoop jobs which are bigrams which represents two actors together with the number of occurences they were mentioned on the same page.
 From all the avaiable clustering algorithms, the k-means was chosen due to the simplicity and speed.
 The rule of thumb was used in order to determine the appropiate number for k. 
 The formulate is  sqrt(n/2), where n is the amount of bigrams.
@@ -37,7 +37,7 @@ The output of the clustering phase are groups of actors.
 
 Recommending
 --------------------------
-The recommendating application suggest similar actors based on a given actors.
+The recommender application suggest similar actors based on a given actors.
 It uses the groups of actors from the clustering phase.
 For a particular actor it find the related actors in a cluster and outputs them as an recommendation.
 
@@ -45,9 +45,9 @@ Discussion
 --------------------------
 The goal of the project was to get hands-on experience with hadoop.
 In our opinion this is accomplished.
-Programming the the hadoop jobs with the MapReduce paradigm and clustering algorithm with Spark went well. 
-Where we struggled with was the connection to the hadoop clusters and accessing the  appropiate Common Crawl dataset.
-In the end we managed to connect with the clusters properly and processed about 10% all of the WAT files.
+Programming the hadoop jobs with the MapReduce paradigm and clustering algorithm with Spark went well. 
+Where we struggled with was the connection to the hadoop clusters and accessing the appropiate Common Crawl dataset.
+In the end we managed to connect with the clusters properly and processed about 10% of all the WAT files.
 This was mainly due to time constraints.
 Finally, although the recommander has been discussed, the concept hasn't been developed due to the scope of the project.
 
