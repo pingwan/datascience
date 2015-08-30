@@ -3,6 +3,8 @@ Detection of relations between actors on the Common Crawl data set
 
 Abstract
 --------------------------
+In this document we outline the project that was done for the Data Science course and our experiences.
+
 
 Introduction
 --------------------------
@@ -35,6 +37,9 @@ The output of the clustering phase are groups of actors.
 
 Recommending
 --------------------------
+The recommendating application suggest similar actors based on a given actors.
+It uses the groups of actors from the clustering phase.
+For a particular actor it find the related actors in a cluster and outputs them as an recommendation.
 
 Discussion
 --------------------------
