@@ -40,5 +40,10 @@ Discussion
 --------------------------
 The goal of the project was to get hands-on experience with hadoop.
 In our opinion this is accomplished.
-Coding the hadoop jobs with the MapReduce paradigm went well. 
-Where we struggled with was the connection to the hadoop clusters and accessing the  appropiate Common Crawl dataset. 
+Programming the the hadoop jobs with the MapReduce paradigm and clustering algorithm with Spark went well. 
+Where we struggled with was the connection to the hadoop clusters and accessing the  appropiate Common Crawl dataset.
+In the end we managed to connect with the clusters properly and processed about 10% all of the WAT files.
+This was mainly due to time constraints.
+Finally, although the recommander has been discussed, the concept hasn't been developed due to the scope of the project.
+
+
