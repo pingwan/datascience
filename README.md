@@ -3,7 +3,7 @@ Detection of relations between actors on the Common Crawl data set
 
 Abstract
 --------------------------
-In this document we outline the project that was done for the Data Science course and our experiences.
+This document will touch upon the engineering task of using a cluster infrastructure to efficiently deal with web-scale data. The task we took on was the analysis of the co-occurence of actors on the web, then we tried to infer information from this. In this document we will discuss the design of the algorithms as well as the results. Finally some general discussion will be given on the experience of this project.
 
 
 Introduction
@@ -55,10 +55,8 @@ Discussion
 --------------------------
 The goal of the project was to get hands-on experience with hadoop.
 In our opinion this is accomplished.
-Programming the hadoop jobs with the MapReduce paradigm and clustering algorithm with Spark went well. 
-Where we struggled with was the connection to the hadoop clusters and accessing the appropiate Common Crawl dataset.
-In the end we managed to connect with the clusters properly and processed about 10% of all the WAT files.
-This was mainly due to time constraints.
-Finally, although the recommander has been discussed, the concept hasn't been developed due to the scope of the project.
+Programming the hadoop jobs with the MapReduce paradigm and clustering algorithm with Spark went well. It did not take too much effort to get a Map-Reduce program running on a local machine on a small fraction of the data, however we struggled with was the connection to the hadoop clusters and accessing the appropiate Common Crawl dataset.
+In the end everything was working on the cluster and, to keep the results interperable, a part of the data was analysed by the algorithm. 
+Finally, the concept of a graph-based recommander was introduced. Unfortunately, the scope of the project did not reach all the way into developing a graph based recommander (in Spark). Therefore it was not developed, but a clustering was done as a proof of concept. 
 
 
