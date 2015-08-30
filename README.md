@@ -39,7 +39,15 @@ Recommending
 --------------------------
 The recommender application suggest similar actors based on a given actors.
 It uses the groups of actors from the clustering phase.
-For a particular actor it find the related actors in a cluster and outputs them as an recommendation.
+For a particular actor it finds the related actors in a cluster and outputs them as an recommendation.
+
+Results
+-------------------------
+Having build an infrastructure to do this kind of analysis, it would be a shame not to use it. Therefore, the algorithms were put into test on a section (about 10%) of the Common Crawl dataset. And even though there was a list of about 100.000 actors composed from IMDB, a subset of 50 of the most popular actors (according to IMDB) was used. This was done for the interprability of the results. 
+After running the Map-Reduce jobs, a list with all the co-occurences of the actors was formed. What is interesting to notice here is that the absolute number one is the pair consisting of Kate Upton and Kate Mara. The hypothesis is that this is caused by what makes the Internet go round. 
+When the distribution of the occurences is examined more closely, it turns out that it is a long-tail distribution. Very few are mentioned a lot, and most of the actors are rarely mentioned together. This can be seen as a problem because the very frequent results can overshadow the other results later on.	
+![longtail distribution](longtail.png)
+
 
 Discussion
 --------------------------
